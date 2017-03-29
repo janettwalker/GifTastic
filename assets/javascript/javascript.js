@@ -60,7 +60,8 @@ function showAnimalGif() {
 
 	//run function on #button click
 	$(".animal").on("click", function(){
-
+		
+	//empty div so new gifs can populate
 	$("#gifHere").empty();
 
 	var animalData = $(this).attr("data-name");
