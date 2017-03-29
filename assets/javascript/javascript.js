@@ -51,14 +51,19 @@ $("#addButton").on("click", function(event){
 
 	//call showButtons function to complete array
 	showButtons();
-})
+
+
+});
+
 
 //buttons are ready
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //setup calls to api
 
-function showAnimalGif() {
 
+
+function showAnimalGif() {
+	$("#button").on("click", function(){
 	var animalData = $(this).attr("data-name");
 	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
         animalData + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -67,26 +72,40 @@ function showAnimalGif() {
 	$.ajax({
 		url: queryURL,
 		method: "GET"
-	});
+	})
 
-// 	.done(function(response) {
+	.done(function(response) {
 	
-// 	var results = response.data.image_original_url;
-// 	console.log(results)
+	var results = response.data;
+	console.log(results)
 
-// 	var gifImage = $("<img>");
+	for (var i = 0; i < response.data; i++) {
 
-// 	gifImage.attr("src", results);
+	var gifDiv = $("<div class='item'>");
 
-// 	gifHere.append(gifImage);
+	var rating = results[i].rating;
 
-// 	$("#gifHere").prepend(gifImage);
+	var p = $("<p>").text("Rating: " + rating);
 
-// });
+	var gifImage = $("<img>");
+
+	gifImage.attr("src", rsults[i].images.fixed_height.url);
+
+	gifDiv.prepend(p);
+	gifDiv.prepend(gifImage);
+
+	$("#gifHere").append(gifDiv);
 
 	};
 
+});
 
-$(document).on("click", ".animal", showAnimalGif);
+});
+
+};
+
 
 showButtons();
+
+showAnimalGif ();
+
