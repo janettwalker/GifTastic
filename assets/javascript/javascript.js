@@ -1,5 +1,5 @@
 //array of animals that will display when page opens
-var randomAnimal = ["koala", "rabbit", "platypus", "opposum"];
+var randomAnimal = ["koala", "rabbit", "platypus", "dog"];
 console.log(randomAnimal);
 
 //function that renders the buttons from the array of randomAnimals
@@ -45,7 +45,7 @@ $("#addButton").on("click", function(event){
 
 	//call showButtons function to complete array
 	showButtons();
-
+	showAnimalGif();
 
 });
 
@@ -59,13 +59,14 @@ $("#addButton").on("click", function(event){
 function showAnimalGif() {
 
 	//run function on #button click
-	$("#button").on("click", function(){
+	$(".animal").on("click", function(){
 
+	$("#gifHere").empty();
 
 	var animalData = $(this).attr("data-name");
 
 	//queryURL to find the giphy api
-	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         animalData + "&api_key=dc6zaTOxFJmzC&limit=10";
 	console.log(queryURL)
 

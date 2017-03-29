@@ -6,8 +6,9 @@ body {
 	color: #fff;
 	background-color: #339999;
 	background-image: none;
+	border-radius: 8px;
 	border: 0px;
-	margin-top: 10px;
+	margin: 20px;
 	padding: 10px 20px;
 }
 
@@ -23,6 +24,7 @@ body {
 	border: 0px;
 	padding: 10px 20px;
 	margin-top: 20px;
+	border-radius: 8px;
 }
 
 #gifHere {
@@ -31,5 +33,5 @@ body {
 
 .item {
 	width: 30%;
-	margin: 20px;
+	margin-top: 20px;
 }
