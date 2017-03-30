@@ -35,3 +35,15 @@ body {
 	width: 30%;
 	margin-top: 20px;
 }
+
+.img-style {
+/*	width: 100%;*/
+	height: 100%;
+	border: 5px;
+	border-style: solid;
+	border-color: white;
+}
+
+#animal-form {
+	margin-top: 20px;
+}

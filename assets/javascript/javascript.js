@@ -99,8 +99,18 @@ function showAnimalGif() {
 	//create html img for the gifs
 	var gifImage = $("<img>");
 
+	//object that holds information for still to animate toggleImage function
+	gifImage.data(
+		{animated: results[i].images.fixed_height.url, 
+			still: results[i].images.fixed_height_still.url,
+		  isStill: true
+	});
+
+	gifImage.click(toggleImage);
 	//assigning an attribute to the image and giving it a source that is from the array of results
-	gifImage.attr("src", results[i].images.fixed_height.url);
+	gifImage.attr("src", results[i].images.fixed_height_still.url);
+
+	gifImage.addClass("img-style");
 
 	//prepend rating text to the gifDiv
 	gifDiv.prepend(p);
@@ -118,6 +128,27 @@ function showAnimalGif() {
 });
 
 };
+
+//**Tim helped me create this toggle**
+//create a function that allows you to click on image and go from still to animate
+function toggleImage() {
+	//refer to a jQuery object
+	var $toggle = $(this);
+	//conditional that says if the data object is "isStill" the animated attr. will be set to false
+	if ($toggle.data("isStill"))
+	{
+		$toggle.attr("src", $toggle.data("animated"));
+		$toggle.data("isStill", false);
+	}
+	//conditional that runs when the if statement has not been validated
+	else 
+	{
+		//if the data object is "still" then set "isStill" to true
+		$toggle.attr("src", $toggle.data("still"));
+		$toggle.data("isStill", true);
+	}
+
+}
 
 //call the showButtons function
 showButtons();
