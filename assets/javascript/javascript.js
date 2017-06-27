@@ -63,12 +63,17 @@ function showAnimalGif() {
 		
 	//empty div so new gifs can populate
 	$("#gifHere").empty();
+	$("#text").empty();
+	//popup text
+	var textDiv = $("<p>Click on the photo to animate</p>");
+	$("#text").addClass("pop-up-text text-center")
+	$("#text").append(textDiv);
 
 	var animalData = $(this).attr("data-name");
 
 	//queryURL to find the giphy api
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        animalData + "&api_key=dc6zaTOxFJmzC&limit=10";
+        animalData + "&api_key=dc6zaTOxFJmzC&limit=9";
 	console.log(queryURL)
 
 	//function that retrieves api data (the promise)
@@ -115,6 +120,8 @@ function showAnimalGif() {
 
 	//prepend rating text to the gifDiv
 	gifDiv.prepend(p);
+
+	gifDiv.addClass("div-style")
 
 	//prepend the gif images to the gifDiv
 	gifDiv.prepend(gifImage);

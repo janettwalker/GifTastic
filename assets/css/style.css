@@ -28,7 +28,14 @@ body {
 }
 
 #gifHere {
-	padding: 20px;
+    height: 125px;
+    
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    
+    /* just for demo */
+    min-width: 612px;
 }
 
 .item {
@@ -43,7 +50,25 @@ body {
 	border-style: solid;
 	border-color: white;
 }
+.div-style {
+	vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
 
 #animal-form {
 	margin-top: 20px;
 }
+
+.jumbostyle {
+	font-family: 'Bungee Shade', cursive;
+	font-size: 80px;
+
+}
+
+.pop-up-text {
+	font-size: 20px;
+	font-weight: bold;
+}
+
