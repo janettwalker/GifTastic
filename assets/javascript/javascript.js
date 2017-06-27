@@ -105,8 +105,9 @@ function showAnimalGif() {
 			still: results[i].images.fixed_height_still.url,
 		  isStill: true
 	});
-
+	//gifImage will run function toggleImage on click
 	gifImage.click(toggleImage);
+	
 	//assigning an attribute to the image and giving it a source that is from the array of results
 	gifImage.attr("src", results[i].images.fixed_height_still.url);
 
